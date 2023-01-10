@@ -1,0 +1,666 @@
+{
+	"info": {
+		"_postman_id": "55df6577-1917-4662-8e97-d93800d6553d",
+		"name": "TFC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12316541"
+	},
+	"item": [
+		{
+			"name": "Classes",
+			"item": [
+				{
+					"name": "StudioClassScheduleView",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/classes/1/schedule",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"classes",
+								"1",
+								"schedule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StudioClassScheduleView Filtering",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/classes/1/schedule?name={{class_name}}&coach={{coach_name}}&date_before=2022-12-30%208:00&time_before=2022-12-30%208:00",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"classes",
+								"1",
+								"schedule"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "{{class_name}}"
+								},
+								{
+									"key": "coach",
+									"value": "{{coach_name}}"
+								},
+								{
+									"key": "date_before",
+									"value": "2022-12-30%208:00"
+								},
+								{
+									"key": "time_before",
+									"value": "2022-12-30%208:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Class Schedule",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/classes/schedule/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"classes",
+								"schedule",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Class History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/classes/history/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"classes",
+								"history",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enroll Class",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/classes/class/1/enrol/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"classes",
+								"class",
+								"1",
+								"enrol",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Drop Class",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/classes/class/1/drop/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"classes",
+								"class",
+								"1",
+								"drop",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enrol ClassSession",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/classes/session/1/enrol/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"classes",
+								"session",
+								"1",
+								"enrol",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Drop ClassSession",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/classes/session/1/drop/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"classes",
+								"session",
+								"1",
+								"drop",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Studios",
+			"item": [
+				{
+					"name": "ListNearbyStudios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/studios/list?location=toronto",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"studios",
+								"list"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "toronto"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListNearbyStudios Filtering",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/studios/list?location=toronto&name={{studio_name}}&coach={{coach_name}}&class_name={{class_name}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"studios",
+								"list"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "toronto"
+								},
+								{
+									"key": "name",
+									"value": "{{studio_name}}"
+								},
+								{
+									"key": "coach",
+									"value": "{{coach_name}}"
+								},
+								{
+									"key": "class_name",
+									"value": "{{class_name}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StudioPage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/studios/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"studios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StudioPageWithDirections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/studios/1/?location=toronto",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"studios",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "toronto"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": [
+				{
+					"name": "All Available Subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/subscriptions/list/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"subscriptions",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe to Subscription",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/subscriptions/subscribe/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"subscriptions",
+								"subscribe",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Current Subscription",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/subscriptions/cancel/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"subscriptions",
+								"cancel",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Past Payments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/subscriptions/payments/history/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"subscriptions",
+								"payments",
+								"history",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Future Payments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/subscriptions/payments/future/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"subscriptions",
+								"payments",
+								"future",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"vedant100\",\n    \"password\": \"vedant100\",\n    \"first_name\": \"vedant\",\n    \"last_name\": \"prajapati\",\n    \"email\": \"vedant17@hotmail.com\",\n    \"avatar\": null,\n    \"phone_number\": \"1231231234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/users/signup/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"signup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"vedant3\",\n    \"password\": \"vedant3\",\n    \"first_name\": \"vedant2\",\n    \"last_name\": \"vedant\",\n    \"email\": \"vedant17@hotmail.com\",\n    \"phone_number\": \"1231231233\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/users/edit/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"edit",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"leaf\",\n    \"password\":\"leaf\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/users/login/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User Card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"card_type\":\"DB\",\n    \"card_number\":\"126\",\n    \"card_holder_name\":\"leaf\",\n    \"expiry_date\":\"2025-01-10T00:00:00Z\",\n    \"security_code\":\"420\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/users/card/create/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"card",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Card",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"card_type\":\"DB\",\n    \"card_number\":\"124\",\n    \"card_holder_name\":\"leaf\",\n    \"expiry_date\":\"2025-01-10T00:00:00Z\",\n    \"security_code\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/users/card/edit/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"card",
+								"edit",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

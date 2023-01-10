@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Register</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    </head>
+	<body>
+            <form class="container" action="{% url 'accounts:register' %}" method="POST">
+				<div>
+					<h2>Please enter your information </h2>
+                    {% comment %} {% if form.errors %}
+                        <h3 style="color: red"> There are {{ form.errors|length }} error(s). </h3>
+                    {% endif %} {% endcomment %}
+				</div>
+                    {% csrf_token %}
+                    <label for="input-username"> Username </label>
+                    <input id="input-username" type="text" name="username" value="{{ request.POST.username }}" />
+                    <div>
+                        {{ form.username.errors }}
+                    </div>
+
+                    <label for="input-password"> Password </label>
+                    <input id="input-password" type="password" name="password1" value="{{ request.POST.password1 }}"/>
+                    <div>
+                        {{ form.password1.errors }}
+                    </div>
+
+                    <label for="input-repeat-password"> Repeat password </label>
+                    <input id="input-repeat-password" type="password" name="password2" value="{{ request.POST.password2 }}"/>
+                    <div>
+                        {{ form.password2.errors }}
+                    </div>
+
+                    <label for="input-email"> Email </label>
+                    <input id="input-email" type="email" name="email" value="{{ request.POST.email }}"/>
+                    <br>
+                        {{ form.email.errors }}
+
+                    <label for="input-first-name"> First Name </label>
+                    <input id="input-first-name" type="text" name="first_name" value="{{ request.POST.first_name }}"/>
+                    <br>
+
+                    <label for="input-last-name"> Last Name </label>
+                    <input id="input-last-name" type="text" name="last_name" value="{{ request.POST.last_name }}"/>
+                    <br>
+
+                <button type="submit">Sign me up!</button>
+
+            </form>
+	</body>
+</html>

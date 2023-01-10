@@ -1,0 +1,18 @@
+#not-found {
+    background-image: url('https://i.ytimg.com/vi/WtEuOj4YxPA/maxresdefault.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    /* width:100vw; */
+}
+
+#centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: yellow;
+    font-weight: bold;
+    font-size: 3em;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,69 @@
+/* Install roboto from google to set at 400 font weight */
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: local('Roboto Regular'), 
+       url(http://themes.googleusercontent.com/static/fonts/roboto/v11/2UX7WLTfW3W8TclTUvlFyQ.woff) 
+       format('woff');
+}
+
+* {
+  font-family: "Roboto";
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1%;
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Header at the top with aqua colour */
+#stickyheader {
+    background-color: aqua;
+    position:sticky;
+    top:0;
+    width: 100%;
+
+}
+
+/* 2 Columns */
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+/* Centered inline list with bullets */
+ul li {
+  display: inline;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+ul li:before {
+  content: '\2022';
+  margin-right: 0.5em;
+}
+
+/* Text Area Form rounded */
+textarea#feedback{
+  border-radius: 5px;
+}
+
+/* Tables */
+table{
+  border-collapse: collapse;
+}
+th{
+  border: 2.5px dashed black;
+  background-color: yellow;
+
+}
+td{
+  border: 2.5px dashed black;
+}
+
+
+input#sendfeedback{
+  cursor: grab;
+}

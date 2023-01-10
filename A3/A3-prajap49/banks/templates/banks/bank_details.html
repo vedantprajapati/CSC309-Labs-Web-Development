@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bank Details</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1> {{ object.name }}</h1>
+    </div <div class="container">
+    <p><strong>Description:</strong> {{ object.description }}</p>
+    </div>
+    <div class="container">
+        <p><strong>Institution Number:</strong> {{ object.institution_number }}</p>
+    </div>
+    <div class="container">
+        <p><strong>Swift Code:</strong> {{ object.swift_code }}</p>
+    </div>
+</body>
+
+</html>

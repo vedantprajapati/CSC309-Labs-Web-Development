@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Branch Add</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <form class="container" action="{% url 'banks:branch_add' request.resolver_match.kwargs.pk %}" method="POST">
+        <div>
+            <h2>Please enter your information </h2>
+        </div>
+        {% csrf_token %}
+        {% if request.user.is_authenticated %}
+        <form method="post">
+            <label for="input-name"> Name </label>
+            <input id="input-name" type="text" name="name" value="{{ request.POST.name }}" />
+            <div>
+                {{ form.name.errors }}
+            </div>
+
+            <label for="input-transit-num"> Transit Number </label>
+            <input id="input-transit-num" type="text" name="transit_num" value="{{ request.POST.transit_num }}" />
+            <div>
+                {{ form.transit_num.errors }}
+            </div>
+
+            <label for="input-address"> Address </label>
+            <input id="input-address" type="text" name="address" value="{{ request.POST.address }}" />
+            <div>
+                {{ form.address.errors }}
+            </div>
+
+            <label for="input-email"> Email </label>
+            <input id="input-email" type="email" name="email" value="{{ request.POST.email }}" />
+            <div>
+                {{ form.email.errors }}
+            </div>
+
+            <label for="input-capacity"> Capacity </label>
+            <input id="input-capacity" type="number" name="capacity" value="{{ request.POST.capacity }}" />
+            <div>
+                {{ form.capacity.errors }}
+            </div>
+            
+            <button type="submit">Add My Branch!</button>
+        </form>
+        {% endif %}
+
+
+    </form>
+</body>
+
+</html>

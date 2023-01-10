@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Update Profile</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <form class="container" action="{% url 'accounts:profile_edit' %}" method="POST">
+        <div>
+            <h2>Please enter your information </h2>
+        </div>
+        {% csrf_token %}
+        {% if request.user.is_authenticated %}
+
+        <form method="post">
+
+            <label for="input-email"> Email </label>
+            {{form.email}}
+            <br>
+            {{ form.email.errors }}
+
+            <label for="input-first-name"> First Name </label>
+            {{form.first_name}}
+            <br>
+
+            <label for="input-last-name"> Last Name </label>
+            {{form.last_name}}
+            <br>
+
+            <label for="input-password"> Password </label>
+            {{form.password}}
+            <div>
+                {{ form.password.errors }}
+            </div>
+
+            <label for="input-repeat-password"> Repeat password </label>
+            {{form.password2}}
+            <div>
+                {{ form.password2.errors }}
+            </div>
+
+
+            <button type="submit">Update My Profile</button>
+        </form>
+        {% endif %}
+    </form>
+</body>
+
+</html>

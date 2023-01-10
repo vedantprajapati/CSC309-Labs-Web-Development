@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bank List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <h1>All Banks</h1>
+    <ul>
+    {% for bank in object_list %}
+        <li><strong>id:</strong> {{bank.id}}, <strong>name:</strong> {{ bank.name}}</li>
+    {% empty %}
+        <li>No Banks Found </li>
+    {% endfor %}
+    </ul>
+</body>
+
+</html>

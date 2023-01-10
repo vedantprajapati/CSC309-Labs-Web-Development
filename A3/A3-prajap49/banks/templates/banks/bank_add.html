@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bank Add</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <form class="container" action="{% url 'banks:bank_add' %}" method="POST">
+        <div>
+            <h2>Please enter your information </h2>
+        </div>
+        {% csrf_token %}
+        {% if request.user.is_authenticated %}
+        <form method="post">
+            <label for="input-name"> Name </label>
+            <input id="input-name" type="text" name="name" value="{{ request.POST.name }}" />
+            <div>
+                {{ form.name.errors }}
+            </div>
+
+            <label for="input-description"> Description </label>
+            <input id="input-description" type="text" name="description" value="{{ request.POST.description }}" />
+            <div>
+                {{ form.description.errors }}
+            </div>
+
+            <label for="input-inst-num"> Institution Number </label>
+            <input id="input-inst-num" type="text" name="inst_num" value="{{ request.POST.inst_num }}" />
+            <div>
+                {{ form.inst_num.errors }}
+            </div>
+
+            <label for="input-swift-code"> Swift Code </label>
+            <input id="input-swift-code" type="text" name="swift_code" value="{{ request.POST.swift_code }}" />
+            <div>
+                {{ form.swift_code.errors }}
+            </div>
+
+            <button type="submit">Add My Bank!</button>
+        </form>
+        {% endif %}
+
+
+    </form>
+</body>
+
+</html>

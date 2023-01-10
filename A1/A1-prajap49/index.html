@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <title>CSC309 Personal Website</title>
+</head>
+<div id="stickyheader">Hello Visitors!</div>
+<br>
+
+<body>
+    <div class="row">
+        <div class="column">
+            <h1>Vedant Prajapati</h1>
+            <h2>prajap49</h2>
+            <br>
+
+            <ul>
+                <li id="marklist">A1 is worth 10%.</li>
+                <li id="marklist">A2 is worth 20%.</li>
+                <li id="marklist">A3 is worth 15%.</li>
+            </ul>
+
+            <details>
+                <summary>Fact</summary>
+                I'm <strong>a</strong> <s>robot</s> <u>human</u>!
+            </details>
+            <table id="table-with-yellow-head">
+                <tr>
+                    <th>Course</th>
+                    <th>Year</th>
+                    <th>Semester</th>
+                    <th>Assignments</th>
+                </tr>
+                <tr>
+                    <td>CSC309</td>
+                    <td>2022</td>
+                    <td>Fall</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>CSC209</td>
+                    <td>2022</td>
+                    <td>Summer</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+            </table>
+            <div>
+                <form action="https://csc309.teach.cs.toronto.edu/a1/submit/" method="POST"
+                    enctype="multipart/form-data">
+                    <label for="feedback">Feedback</label>
+                    <textarea placeholder="Enter your feedback here" name="feedback" id="feedback"></textarea>
+                    <br>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <br>
+                    <label for="attachments">Attachment</label>
+                    <input name="attachments" type="file" id="attachments" />
+                    <br>
+                    <input name="consent" type="checkbox" id="consent" value="yes" />
+                    <label for="consent">You agree to receive emails from me</label>
+                    <br>
+                    <input type="submit" value="Send Feedback" id="sendfeedback">
+                </form>
+
+            </div>
+
+
+        </div>
+        <div class="column">
+            <iframe
+                src="https://axiom.utm.utoronto.ca/~csc309/21s/syllabus/20211_CSC309H5S_LEC9102.pdf#toolbar=1&embedded=true"
+                width="100%" height="800px"></iframe>
+        </div>
+
+    </div>
+</body>
+<footer><a
+        href="mailto:vedant.prajapati@mail.utoronto.ca?subject=Bug Found!&body=I found the following bug on your website">vedant.prajapati@mail.utoronto.ca</a>
+</footer>
+
+</html>
